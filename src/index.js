@@ -4,9 +4,10 @@ import './index.css';
 import App from './App';
 import Home from './pages/Home'
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import SignUp from './pages/SignUp';
 import ErrorPage from './errors/ErrorPage';
+import { ProtectedRoute } from './guards/ProtectedRoute';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -14,8 +15,14 @@ import {
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App />,
+ 
+    element: <ProtectedRoute />,
+    children: [
+      {
+        path: "/",
+        element: <App></App>
+      }
+    ],
     errorElement: <ErrorPage />
   },
   {
