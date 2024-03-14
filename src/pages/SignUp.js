@@ -14,7 +14,7 @@ const SignUp = () => {
         console.log(event)
     }
     return (
-        <div style={{ padding: '24px' }}>
+        <div style={{ padding: '24px', flex: 1 }}>
             <div style={{ fontSize: '24px', textAlign: 'center', marginBottom: '24px' }}>REGISTER</div>
             <form onSubmit={handleSubmit(submitForm)} style={{ maxWidth: '500px', margin: '0 auto' }}>
                 <div style={{ display: 'flex', gap: 24 }}>
