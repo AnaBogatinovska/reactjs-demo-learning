@@ -1,9 +1,20 @@
-import logo from '../logo.svg';
+import { Link, Navigate, useNavigate } from "react-router-dom";
+
 
 function Home() {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        localStorage.removeItem('token');
+        navigate("/login")
+    };
     return (
-        <div>HOME</div>
-       
+        <>
+            <div style={{ textAlign: 'center', flex: 1 }}>
+                <div>
+                    <button onClick={handleClick}>SIGN OUT</button>
+                </div>
+            </div>
+        </>
     )
 }
 
