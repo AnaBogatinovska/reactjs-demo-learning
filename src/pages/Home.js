@@ -1,7 +1,7 @@
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
 
-function Home() {
+const Home = () => {
     const navigate = useNavigate();
     const handleClick = () => {
         localStorage.removeItem('token');

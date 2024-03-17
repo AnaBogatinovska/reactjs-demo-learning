@@ -1,12 +1,10 @@
 import './App.css';
-import { Outlet } from 'react-router-dom';
+import MainLayout from './layouts/MainLayout';
 
-function App() {
+const  App = () => {
   return (
     <>
-      <div style={{flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-       APPP
-      </div>
+      <MainLayout />
     </>
   );
 }

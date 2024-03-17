@@ -19,19 +19,19 @@ import { Navigate } from 'react-router-dom';
 
 const router = createBrowserRouter([
   {
-
     element: <ProtectedRoute />,
     children: [
       {
-        path: "/",
-        element: <App ></App>,
-        action: () => {
-          // window.location.replace('/home') 
-        }
-      },
-      {
-        path: "/home",
-        element: <Home />
+        path: '/',
+        element: <App />,
+        children: [
+          {
+            path: '/',
+            element: <Navigate to="/home" replace/>,
+          },
+          { path: "/home", element: <Home /> },
+        ],
+        
       }
     ],
     errorElement: <ErrorPage />
