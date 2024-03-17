@@ -1,56 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import Home from './pages/Home'
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
-import SignUp from './pages/SignUp';
-import ErrorPage from './errors/ErrorPage';
-import { ProtectedRoute } from './guards/ProtectedRoute';
-import { AuthProtectedRoute } from './guards/AuthProtectedRoute';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import Login from './pages/Login';
-import { useNavigate } from 'react-router-dom';
-import { Navigate } from 'react-router-dom';
-
-const router = createBrowserRouter([
-  {
-    element: <ProtectedRoute />,
-    children: [
-      {
-        path: '/',
-        element: <App />,
-        children: [
-          {
-            path: '/',
-            element: <Navigate to="/home" replace/>,
-          },
-          { path: "/home", element: <Home /> },
-        ],
-        
-      }
-    ],
-    errorElement: <ErrorPage />
-  },
-  {
-    element: <AuthProtectedRoute />,
-    children: [
-      {
-        path: '/login',
-        element: <Login />
-      },
-      {
-        path: '/sign-up',
-        element: <SignUp />
-      },
-    ]
-  }
-
-]);
+import { RouterProvider } from "react-router-dom";
+import router from './common/router.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
