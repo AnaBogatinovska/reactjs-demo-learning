@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useForm } from 'react-hook-form';
 import { Controller } from "react-hook-form";
+import { Button } from "@mui/material";
 
 const SignUp = () => {
     const {
@@ -84,7 +85,7 @@ const SignUp = () => {
                                 />
                             </div>
                             <div style={{ display: 'flex', gap: 8 }}>
-                                <div className="field" style={{flex: 1}}>
+                                <div className="field" style={{ flex: 1 }}>
                                     <label className="field-label" htmlFor="country">Country *</label>
                                     <Controller
                                         name="country"
@@ -104,7 +105,7 @@ const SignUp = () => {
                                     />
                                     {errors.country && <p className="error-message">{errors.country.message}</p>}
                                 </div>
-                                <div className="field" style={{flex: 1}}>
+                                <div className="field" style={{ flex: 1 }}>
                                     <label className="field-label" htmlFor="city">City *</label>
                                     <Controller
                                         name="city"
@@ -149,10 +150,10 @@ const SignUp = () => {
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                    <button type="submit" style={{ marginTop: '16px', backgroundColor: 'orange', color: 'white', borderRadius: '8px', padding: '8px 16px', border: 'none', cursor: 'pointer' }}>Submit</button>
+                    <Button variant="contained" type="submit">Submit</Button>
                 </div>
             </form>
         </div>

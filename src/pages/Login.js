@@ -1,7 +1,7 @@
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useForm } from 'react-hook-form';
 import { Controller } from "react-hook-form";
-
+import Button from '@mui/material/Button';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -55,18 +55,7 @@ const Login = () => {
 
                     </div>
                     <div style={{ textAlign: 'center' }}>
-                        <button type="submit"
-                            style={{
-                                marginTop: '16px',
-                                backgroundColor: 'orange',
-                                color: 'white',
-                                borderRadius: '8px',
-                                padding: '8px 16px',
-                                border: 'none',
-                                cursor: 'pointer'
-                            }}>
-                            Login
-                        </button>
+                        <Button variant="contained" type="submit">Login</Button>
                     </div>
                 </form>
                 <div style={{ textAlign: 'center', marginTop: '24px' }}>
